@@ -1,0 +1,503 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: rgba(176, 255, 183, 0.6117647059);
+}
+
+@font-face {
+  font-family: "longhaul";
+  src: url(fonts/Longhaul.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --titulo:"longhaul", sans-serif;
+  --rosa:#e478ff;
+  --verde: #8ce994;
+  --azul:rgb(39, 39, 167);
+  --texto: "Inter", sans-serif;
+}
+
+header {
+  background-color: var(--rosa);
+}
+header h1 {
+  font-family: var(--titulo);
+  font-size: 2.5rem;
+  color: var(--verde);
+  text-align: center;
+}
+header .home__nav {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+header .home__nav ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+header .home__nav ul .home__nav-item {
+  font-family: var(--texto);
+  font-size: 1rem;
+  color: var(--azul);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+header .home__nav ul .home__nav-item:hover {
+  color: var(--verde);
+  transition: 1s;
+}
+header .home__nav input {
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  font-family: var(--texto);
+  font-size: 0.8rem;
+  color: black;
+  background-color: rgba(201, 198, 198, 0.575);
+}
+header .bolacha {
+  display: none;
+}
+header .bolacha:checked ~ .home__categorias {
+  display: block;
+  transition: 10s;
+}
+header .material-symbols-outlined {
+  text-align: center;
+  display: block;
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--azul);
+  cursor: pointer;
+  margin-top: 15px;
+}
+header .home__categorias {
+  text-align: center;
+  display: none;
+}
+header .home__categorias ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+header .home__categorias ul li {
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(97, 96, 96, 0.336);
+}
+header .home__categorias ul li a {
+  font-family: var(--texto);
+  font-size: 0.8rem;
+  color: var(--verde);
+  text-decoration: none;
+  font-weight: 600;
+}
+header .home__categorias ul li a:hover {
+  color: var(--azul);
+  transition: 1s;
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    animation-name: bg;
+    animation-duration: 3s;
+  }
+  @keyframes bg {
+    from {
+      background-color: rgba(145, 81, 161, 0.8078431373);
+    }
+    to {
+      background-color: var(--rosa);
+    }
+  }
+  header h1 {
+    font-family: var(--titulo);
+    font-size: 3rem;
+    color: var(--verde);
+  }
+  header .home__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4rem;
+  }
+  header .home__nav ul {
+    gap: 30px;
+  }
+  header .home__nav ul .home__nav-item {
+    font-family: var(--texto);
+    font-size: 1.3rem;
+    color: var(--azul);
+  }
+  header .home__nav input {
+    font-family: var(--texto);
+    font-size: 1rem;
+    color: black;
+    width: 400px;
+    animation: typing 1s steps(40), blink 0.5s step-end infinite alternate;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  header .material-symbols-outlined {
+    display: none;
+  }
+  header .home__categorias {
+    display: block;
+  }
+  header .home__categorias ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  header .home__categorias ul li {
+    padding-top: 20px;
+    border-bottom: none;
+  }
+  header .home__categorias ul li a {
+    font-family: var(--texto);
+    font-size: 1rem;
+    color: var(--verde);
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+main .product {
+  display: flex;
+  flex-direction: column;
+  width: 98vw;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* width */
+  /* Track */
+  /* Handle */
+}
+main .product .product-img {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  overflow: hidden;
+  overflow-x: scroll;
+  height: 95%;
+  gap: 30px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+main .product .product-img img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .product .product-img::-webkit-scrollbar {
+  width: 10px;
+}
+main .product .product-img::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+main .product .product-img::-webkit-scrollbar-thumb {
+  background: rgba(61, 35, 68, 0.5607843137);
+  border-radius: 10px;
+}
+main .product .product-inf {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+main .product .product-inf .product-inf--name {
+  font-family: "arial";
+  font-size: 1.125rem;
+  color: var(--azul);
+  font-weight: bold;
+}
+main .product .product-inf .product-inf--autor {
+  font-family: "Arial";
+  font-size: 0.75rem;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+main .product .product-inf .product-inf--caption {
+  font-family: "arial";
+  font-size: 0.75rem;
+  color: black;
+  text-align: justify;
+  font-weight: 700;
+  text-align: center;
+}
+main .product .product-inf .product-inf--price {
+  font-family: "arial";
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+main .product .product-inf select {
+  width: 25%;
+  height: 10%;
+  font-size: 1.2rem;
+  padding: 5px;
+  color: var(--azul);
+  margin: auto;
+}
+main .product .product-inf select:focus {
+  border: 1px solid var(--rosa);
+}
+main .product .product-inf label button {
+  padding: 10px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: black;
+  font-family: "arial";
+  font-size: 0.9rem;
+  color: var(--rosa);
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+}
+main .product .product-inf label button:hover {
+  background-color: var(--rosa);
+  color: black;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    box-sizing: border-box;
+  }
+  main .product {
+    flex-direction: row;
+    margin-top: 100px;
+    display: flex;
+    width: 98vw;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 500px;
+    /* width */
+    /* Track */
+    /* Handle */
+  }
+  main .product .product-img {
+    display: flex;
+    width: 40%;
+    text-align: center;
+    overflow: hidden;
+    overflow-x: scroll;
+    height: 95%;
+    gap: 130px;
+    padding-bottom: 15px;
+  }
+  main .product .product-img img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  main .product .product-img::-webkit-scrollbar {
+    width: 10px;
+  }
+  main .product .product-img::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  main .product .product-img::-webkit-scrollbar-thumb {
+    background: rgba(61, 35, 68, 0.5607843137);
+    border-radius: 10px;
+  }
+  main .product .product-inf {
+    align-self: flex-start;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: start;
+  }
+  main .product .product-inf .product-inf--name {
+    font-family: "arial";
+    font-size: 1.125rem;
+    color: var(--azul);
+    font-weight: bold;
+    text-align: start;
+  }
+  main .product .product-inf .product-inf--autor {
+    font-family: "Arial";
+    font-size: 0.75rem;
+    color: black;
+    font-weight: 700;
+    text-align: start;
+  }
+  main .product .product-inf .product-inf--caption {
+    font-family: "arial";
+    font-size: 0.75rem;
+    color: black;
+    text-align: justify;
+    font-weight: 700;
+    text-align: start;
+  }
+  main .product .product-inf .product-inf--price {
+    font-family: "arial";
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
+    text-align: start;
+  }
+  main .product .product-inf select {
+    width: 25%;
+    height: 10%;
+    font-size: 1.2rem;
+    padding: 5px;
+    color: var(--azul);
+    margin: 0;
+  }
+  main .product .product-inf select:focus {
+    border: 1px solid var(--rosa);
+  }
+  main .product .product-inf label button {
+    background-color: black;
+    font-family: "arial";
+    font-size: 0.9rem;
+    color: var(--rosa);
+    padding: 10px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    text-align: center;
+  }
+  main .product .product-inf label button:hover {
+    background-color: var(--rosa);
+    color: black;
+    transition: 0.5s;
+  }
+}
+footer {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  background-color: var(--rosa);
+  margin-top: 20px;
+  padding: 10px;
+}
+footer ul {
+  padding: 5px;
+}
+footer ul .footer-item {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+footer ul .footer-item a {
+  text-decoration: none;
+  font-family: var(--texto);
+  font-size: 0.8rem;
+  color: var(--azul);
+  font-weight: bold;
+}
+footer ul .footer-item a i {
+  font-size: 0.9rem;
+}
+footer ul .footer-item a:hover {
+  color: var(--verde);
+  transition: 1s;
+}
+footer ul li {
+  list-style: none;
+  text-align: center;
+  display: flex;
+}
+footer ul:nth-child(2) {
+  border-left: 1px solid grey;
+}
+footer p {
+  align-self: end;
+  font-family: var(--texto);
+  font-size: 0.9rem;
+  color: white;
+}
+
+@media screen and (min-width: 992px) {
+  footer {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+  }
+  footer ul {
+    padding: 10px;
+    display: flex;
+    gap: 1rem;
+  }
+  footer ul .footer-item {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+  }
+  footer ul .footer-item a {
+    text-decoration: none;
+    font-family: var(--texto);
+    font-size: 1.2rem;
+    color: var(--azul);
+    font-weight: bold;
+  }
+  footer ul .footer-item a i {
+    font-size: 1.5rem;
+  }
+  footer ul .footer-item a:hover {
+    color: var(--verde);
+    transition: 1s;
+  }
+  footer ul li {
+    list-style: none;
+    text-align: center;
+    display: flex;
+  }
+  footer ul:nth-child(2) {
+    border-left: 1px solid grey;
+  }
+  footer p {
+    align-self: end;
+    font-family: var(--titulo);
+    font-size: 1rem;
+    color: white;
+  }
+}/*# sourceMappingURL=product.css.map */
