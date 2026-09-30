@@ -1,6 +1,6 @@
 let cart = [];
 
-const aviso = document.getElementById("aviso-academico");
+const aviso = document.getElementById("aviso-academico"); //A PÁGINA FOI CRIADA PARA FINS ACADÊMICOS.
 let timer;
 
 function fecharAviso() {
