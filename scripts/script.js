@@ -52,4 +52,7 @@ function toggleModal() {
   modal.style.display = modal.style.display === "block" ? "none" : "block";
 }
 
-document.getElementById("cart-icon").addEventListener("click", toggleModal);
+const cartIcon = document.getElementById("cart-icon");
+if (cartIcon) {
+  cartIcon.addEventListener("click", toggleModal);
+}
