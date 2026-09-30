@@ -1,0 +1,50 @@
+.overlay {
+  position: fixed;
+  inset: 0; /* cobre a tela inteira */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(80, 80, 80, 0.6); /* cinza transparente */
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.overlay.visivel {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.balao {
+  position: relative;
+  max-width: 420px;
+  margin: 0 20px;
+  padding: 32px 40px;
+  text-align: center;
+  background: rgba(224, 123, 255, 0.9);
+  color: #2a1fb5;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  transform: scale(0.9);
+  transition: transform 0.5s ease;
+}
+
+.overlay.visivel .balao {
+  transform: scale(1);
+}
+
+.fechar {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #2a1fb5;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}

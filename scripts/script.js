@@ -1,5 +1,19 @@
 let cart = [];
 
+const aviso = document.getElementById("aviso-academico");
+let timer;
+
+function fecharAviso() {
+  aviso.classList.remove("visivel");
+  clearTimeout(timer);
+}
+
+window.addEventListener("load", () => {
+  aviso.classList.add("visivel");
+  timer = setTimeout(fecharAviso, 5000); // fecha após 5s
+});
+
+
 function addToCart(productName, price) {
   cart.push({ name: productName, price });
   updateCart();

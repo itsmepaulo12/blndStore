@@ -17,6 +17,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/e93a5ecb52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="alert.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         <nav class="home__nav">
 
 
-        <!-- MODAL -->
+            <!-- MODAL -->
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -85,6 +87,14 @@
 
 
     <main>
+
+        <div id="aviso-academico" class="overlay">
+            <div class="balao">
+                <button class="fechar" onclick="fecharAviso()" aria-label="Fechar">×</button>
+                <p>🎓 Este site foi desenvolvido para fins acadêmicos.</p>
+            </div>
+        </div>
+
         <section class="product">
             <h2>T - Shirts</h2>
             <ul class="product-div">
@@ -361,7 +371,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    <script src="scripts/script.js"></script>
+
 </body>
 
 </html>
